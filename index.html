@@ -67,6 +67,43 @@ strong {
       margin-bottom: .5rem;
     }
 
+    .details-row {
+      display: inline-flex;
+      gap: 0;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      margin-top: .35rem;
+    }
+
+    .details-row > details {
+      flex: 0 0 auto;
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    .details-row > * + * {
+      border-left: 1px solid #bfbfbf;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .details-row > a {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 0 .35rem;
+    }
+
+    .details-row summary {
+      white-space: nowrap;
+      padding: 0 .35rem;
+    }
+
+    .details-row p {
+      max-width: 32rem;
+      margin: .25rem .35rem 0;
+      line-height: 1.35;
+    }
+
     .spacer {
       margin-bottom: .5rem;
     }
@@ -100,21 +137,31 @@ strong {
     <h4> Work in Progress</h4>
 <ul>
     <li class="spacer">
-    <strong>Yuma Noritomo, Karlijn Morsink, and Kelvin Shikuku.</strong> Trading off human capital versus productive asset investment: perceptions of risk and return.
-   <details>
-           <summary>Funding</summary> 
-          <p> Yamada Academic Research Encouragement Fund (Public Interest Trust), Chester O. McCorkle, Jr. Student Scholarship (AAEA), International Research Travel Grants (Einaudi Center), Research Travel Grant (Graduate School, Cornell University)*2, Academic Enrichment Program (Cornell CALS), Graduate Research Funding (The Center for the Study of Inequality)  </p> 
-        </details>   
+    <strong>Yuma Noritomo, Karlijn Morsink, and Kelvin Shikuku.</strong> Trading off human capital versus productive asset investment: perceptions of risk and return. 
+   <div class="details-row">
+     <details>
+       <summary>Funding</summary> 
+       <p> Andrew W. Mellon Student Initiated Research Grant, Yamada Academic Research Encouragement Fund (Public Interest Trust), Chester O. McCorkle, Jr. Student Scholarship (AAEA), International Research Travel Grants (Einaudi Center), Research Travel Grant (Graduate School, Cornell University)*2, Academic Enrichment Program (Cornell CALS), Graduate Research Funding (The Center for the Study of Inequality)  </p> 
+    </details>   
+    <details>
+       <summary>PAP</summary> 
+       <p> AEARCTR-0017654 </p> 
+    </details>
+    </div>
   </li>
     <li class="spacer">
-    <strong> Barrett et al. </strong> <a href="file/Long-term_paper.pdf" target="_blank">Long-run effects of catastrophic drought insurance</a> [<a href="file/CEAR_IBLI_longterm_slide_yn.pdf" target="_blank">slide</a>] [<a href="https://www.financialprotectionforum.org/blog/pilot-scale-how-research-powers-pastoralists-progress">World Bank blog</a>] <i>R&R at American Economic Review</i>
-    <details>       <!-- [<a href="file/Long-term_slide.pdf">slide</a>] -->
+    <strong> Barrett et al. </strong> <a href="file/Long-term_paper.pdf" target="_blank">Long-run effects of catastrophic drought insurance</a> <i>R&R at American Economic Review</i>
+    <div class="details-row">
+      <details>
            <summary>Abstract</summary> 
           <p> We study the long-run effects of catastrophic drought insurance on pastoralist households in Kenya and Ethiopia. Instrumenting with randomized premium discounts, we estimate the impacts of insurance coverage a decade later. Insurance coverage induced households to herd fewer small livestock like goats, typically used as precautionary savings in the short run, an effect which persisted in the long-run. Insurance also generated a significant long-run increase in children’s education. These effects are driven by households with small baseline herds, reflecting reduced child labor demand. We provide suggestive evidence that these impacts stem from reduced \textit{ex ante} risk exposure and the behavioral change it induces, rather than from \textit{ex post} indemnity payments.  </p> 
-        </details>   
+      </details>
+      <a href="file/CEAR_IBLI_longterm_slide_yn.pdf" target="_blank">Slide</a>
+      <a href="https://www.financialprotectionforum.org/blog/pilot-scale-how-research-powers-pastoralists-progress" target="_blank">WB Blog</a>
+    </div>
 </li>
   <li class="spacer">
-    <strong>Yuma Noritomo.</strong> <a href="file/draft_drought_humancapital_260110_EJ.pdf" target="_blank">Does the timing of productivity shocks in childhood affect educational attainment?</a> [<a href="file/presentation_drought_humancapital_260313_PacDev.pdf" target="_blank">slide</a>] [<a href="https://www.rieb.kobe-u.ac.jp/en/edu-society/kanematsu_prize/index.html">Kanematsu Award, Nishijima Award</a>] <i>Submitted</i>
+    <strong>Yuma Noritomo.</strong> <a href="file/draft_drought_humancapital_260110_EJ.pdf" target="_blank">Does the timing of productivity shocks in childhood affect educational attainment?</a> <i>Submitted</i>
    <div class="details-row">
     <details>
       <summary>Abstract</summary>
@@ -134,11 +181,9 @@ strong {
         in low-income settings.
       </p>
     </details>
-<!-- 
-    <details>
-      <summary>Awards</summary>
-      <p>Kanematsu Award, Nishijima Award</p>
-    </details>-->
+    <a href="file/presentation_drought_humancapital_260313_PacDev.pdf" target="_blank">Slide</a>
+    <a href="https://www.rieb.kobe-u.ac.jp/en/edu-society/kanematsu_prize/index.html" target="_blank">Kanematsu Award</a>
+    <a href="https://www.rieb.kobe-u.ac.jp/en/edu-society/kanematsu_prize/index.html" target="_blank">Nishijima Award</a>
   </div>
 </li>
  <li class="spacer"> 
