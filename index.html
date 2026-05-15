@@ -1,239 +1,367 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuma Noriomo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yuma Noritomo, PhD student in development economics at Dyson, Cornell.">
+  <title>Yuma Noritomo</title>
+
   <style>
+    :root {
+      --ink: #202124;
+      --muted: #5f6368;
+      --line: #dfe3e8;
+      --link: #1f5f8b;
+      --link-hover: #123f5c;
+      --paper: #ffffff;
+      --wash: #f6f8fa;
+      --accent: #8d3b2f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.58;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .page {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 38px 0 56px;
+    }
+
+    .site-header {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 34px;
+      align-items: start;
+      padding-bottom: 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .portrait {
+      width: 210px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      background: var(--wash);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 6vw, 3.15rem);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 42px 0 14px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+      font-size: 1.38rem;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: var(--accent);
+      font-size: 1.06rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .role {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 880px;
+    }
+
+    .research-list,
+    .plain-list {
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
-      color: #111;
-      line-height: 1.0;
+      list-style: none;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 1rem;
+    .research-list li,
+    .plain-list li {
+      margin: 0 0 17px;
     }
 
-    h1,h2,h3,h4 {
-      margin-top: .5rem;
-      margin-bottom: .5rem; 
+    .paper-title {
+      font-weight: 600;
     }
 
-a {
-  color: #1e90ff; /* Vivid light blue */
-  text-decoration: none;
-}
+    .authors,
+    .venue,
+    .meta {
+      color: var(--muted);
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    .venue {
+      font-style: italic;
+    }
 
-strong {
-  font-weight: 500; /* Lighter bold */
-}
-
-    .header {
+    .paper-links {
       display: flex;
-      align-items: center;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      align-items: baseline;
+      margin-top: 5px;
+      font-size: 0.96rem;
     }
 
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      flex-shrink: 0;
+    .paper-links a,
+    .paper-links span,
+    .paper-links summary {
+      white-space: nowrap;
     }
 
-    @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
+    .paper-links details {
+      margin: 0;
+    }
+
+    .paper-links details[open] {
+      flex-basis: 100%;
+    }
+
+    .paper-links summary {
+      display: inline;
+      color: var(--link);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .paper-links summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .paper-links summary::after {
+      content: " +";
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .paper-links details[open] summary::after {
+      content: " –";
+    }
+
+    .paper-links details p {
+      max-width: 780px;
+      margin: 8px 0 4px;
+      padding-left: 13px;
+      border-left: 3px solid var(--line);
+      color: var(--ink);
+      font-size: 0.95rem;
+      line-height: 1.48;
+      white-space: normal;
+    }
+
+    .note {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    footer {
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: min(100% - 28px, 960px);
+        padding-top: 24px;
       }
 
-      .profile-pic {
-        margin-bottom: .5rem;
+      .site-header {
+        grid-template-columns: 1fr;
       }
-    }
 
-    details {
-      margin-bottom: .5rem;
-    }
+      .portrait {
+        width: min(220px, 70vw);
+      }
 
-    .details-row {
-      display: inline-flex;
-      gap: 0;
-      align-items: flex-start;
-      flex-wrap: nowrap;
-      margin-top: .35rem;
-    }
+      h2 {
+        margin-top: 34px;
+      }
 
-    .details-row > details {
-      flex: 0 0 auto;
-      margin-bottom: 0;
-      padding: 0;
-    }
-
-    .details-row > * + * {
-      border-left: 1px solid #bfbfbf;
-      margin-left: 0;
-      padding-left: 0;
-    }
-
-    .details-row > a {
-      display: inline-block;
-      white-space: nowrap;
-      padding: 0 .35rem;
-    }
-
-    .details-row > span {
-      display: inline-block;
-      white-space: nowrap;
-      padding: 0 .35rem;
-    }
-
-    .details-row summary {
-      white-space: nowrap;
-      padding: 0 .35rem;
-    }
-
-    .details-row p {
-      max-width: 32rem;
-      margin: .25rem .35rem 0;
-      line-height: 1.35;
-    }
-
-    .spacer {
-      margin-bottom: .5rem;
+      .paper-links {
+        gap: 5px 12px;
+      }
     }
   </style>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8DRRM0J6N"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8DRRM0J6N"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-S8DRRM0J6N');
   </script>
-
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-        <img src="file/Yuma_cows.jpg" alt="Profile Picture" class="profile-pic" />
+  <div class="page">
+    <header class="site-header">
+      <img class="portrait" src="file/Yuma_cows.jpg" alt="Profile Picture">
+
       <div>
-        <h3>Yuma Noritomo</h3> 
-    <p class="profile__lead">
-      I’m a fourth-year PhD student in development economics at Dyson, Cornell, advised by Chris Barrett, Brian Dillon, Johannes Haushofer, and Karlijn Morsink. I visited development reserach group at PSE and Wageningen.
-    </p>
-    <p class="profile__desc">
-      My research studies challenges to <strong>human capital investment</strong> that hinder escape from poverty—such as child labor—in low-income, high-risk environments, and evaluates policies to reduce these forms of suffering.
-    </p>
-    
+        <h1>Yuma Noritomo</h1>
+        <p class="role">
+          I’m a fourth-year PhD student in development economics at Dyson, Cornell, advised by Chris Barrett, Brian Dillon, Johannes Haushofer, and Karlijn Morsink. I visited development reserach group at PSE and Wageningen.
+        </p>
+        <p>
+          My research studies challenges to <strong>human capital investment</strong> that hinder escape from poverty—such as child labor—in low-income, high-risk environments, and evaluates policies to reduce these forms of suffering.
+        </p>
+      </div>
+    </header>
 
-        </div>
-    </div>
-    <h4> Work in Progress</h4>
-<ul>
-    <li class="spacer">
-    <strong> Noritomo, Morsink, and Shikuku.</strong> Trading off human capital versus productive asset investment: perceptions of risk and return. 
-   <div class="details-row">
-     <details>
-       <summary>Funding</summary> 
-       <p> Andrew W. Mellon Student Initiated Research Grant, Yamada Academic Research Encouragement Fund (Public Interest Trust), Chester O. McCorkle, Jr. Student Scholarship (AAEA), International Research Travel Grants (Einaudi Center), Research Travel Grant (Graduate School, Cornell University)*2, Academic Enrichment Program (Cornell CALS), Graduate Research Funding (The Center for the Study of Inequality)  </p> 
-    </details>   
-    <details>
-       <summary>PAP</summary> 
-       <p> AEARCTR-0017654 </p> 
-    </details>
-    </div>
-  </li>
-    <li class="spacer">
-    <strong> Barrett et al. </strong> <a href="file/Long-term_paper.pdf" target="_blank">Long-run effects of catastrophic drought insurance</a> <i>R&R at American Economic Review</i>
-    <div class="details-row">
-      <details>
-           <summary>Abstract</summary> 
-          <p> We study the long-run effects of catastrophic drought insurance on pastoralist households in Kenya and Ethiopia. Instrumenting with randomized premium discounts, we estimate the impacts of insurance coverage a decade later. Insurance coverage induced households to herd fewer small livestock like goats, typically used as precautionary savings in the short run, an effect which persisted in the long-run. Insurance also generated a significant long-run increase in children’s education. These effects are driven by households with small baseline herds, reflecting reduced child labor demand. We provide suggestive evidence that these impacts stem from reduced \textit{ex ante} risk exposure and the behavioral change it induces, rather than from \textit{ex post} indemnity payments.  </p> 
-      </details>
-      <a href="file/CEAR_IBLI_longterm_slide_yn.pdf" target="_blank">Slide</a>
-      <a href="https://www.financialprotectionforum.org/blog/pilot-scale-how-research-powers-pastoralists-progress" target="_blank">WB Blog</a>
-    </div>
-</li>
-  <li class="spacer">
-    <strong>Noritomo.</strong> <a href="file/draft_drought_humancapital_260110_EJ.pdf" target="_blank">Does the timing of productivity shocks in childhood affect educational attainment?</a> <i>New draft coming soon</i>
-   <div class="details-row">
-    <details>
-      <summary>Abstract</summary>
-      <p>
-        Poor households in developing countries often face trade-offs between children’s schooling and labor.
-        Using data on pastoralist households in rural Kenya and Ethiopia–where livestock require care and generate
-        within-household demand for child labor–I exploit quasi-random variation in rangeland grazing conditions
-        that affects both household income and labor demand to estimate the impact of productivity shocks during
-        childhood on educational attainment. Positive productivity shocks during preschool ages increase completed
-        schooling, primarily by raising the probability of primary school entry, consistent with the relaxation of
-        short-term liquidity constraints. In contrast, negative productivity shocks during primary school ages–
-        when children are most likely to exit school and child labor productivity increases–are associated with
-        higher educational attainment. This effect appears to operate through significant reductions in livestock
-        holdings that lower subsequent demand for boys’ labor in animal husbandry and probably reinforce the
-        effect by inducing sedentarization. These results highlight the importance of non-separable household
-        production and human capital decisions in shaping educational outcomes during critical stages of childhood
-        in low-income settings.
+    <main>
+      <section id="work-in-progress" aria-labelledby="work-in-progress-heading">
+        <h2 id="work-in-progress-heading">Work in Progress</h2>
+
+        <ul class="research-list">
+          <li>
+            <span class="authors"><strong>Noritomo, Morsink, and Shikuku.</strong></span>
+            <span class="paper-title">Trading off human capital versus productive asset investment: perceptions of risk and return.</span>
+
+            <div class="paper-links">
+              <details>
+                <summary>Funding</summary>
+                <p>Andrew W. Mellon Student Initiated Research Grant, Yamada Academic Research Encouragement Fund (Public Interest Trust), Chester O. McCorkle, Jr. Student Scholarship (AAEA), International Research Travel Grants (Einaudi Center), Research Travel Grant (Graduate School, Cornell University)*2, Academic Enrichment Program (Cornell CALS), Graduate Research Funding (The Center for the Study of Inequality)</p>
+              </details>
+
+              <details>
+                <summary>PAP</summary>
+                <p>AEARCTR-0017654</p>
+              </details>
+            </div>
+          </li>
+
+          <li>
+            <span class="authors"><strong>Barrett et al.</strong></span>
+            <a class="paper-title" href="file/Long-term_paper.pdf" target="_blank" rel="noopener">Long-run effects of catastrophic drought insurance</a>
+            <span class="venue">R&amp;R at American Economic Review</span>
+
+            <div class="paper-links">
+              <details>
+                <summary>Abstract</summary>
+                <p>We study the long-run effects of catastrophic drought insurance on pastoralist households in Kenya and Ethiopia. Instrumenting with randomized premium discounts, we estimate the impacts of insurance coverage a decade later. Insurance coverage induced households to herd fewer small livestock like goats, typically used as precautionary savings in the short run, an effect which persisted in the long-run. Insurance also generated a significant long-run increase in children’s education. These effects are driven by households with small baseline herds, reflecting reduced child labor demand. We provide suggestive evidence that these impacts stem from reduced \textit{ex ante} risk exposure and the behavioral change it induces, rather than from \textit{ex post} indemnity payments.</p>
+              </details>
+
+              <a href="file/CEAR_IBLI_longterm_slide_yn.pdf" target="_blank" rel="noopener">Slide</a>
+              <a href="https://www.financialprotectionforum.org/blog/pilot-scale-how-research-powers-pastoralists-progress" target="_blank" rel="noopener">WB Blog</a>
+            </div>
+          </li>
+
+          <li>
+            <span class="authors"><strong>Noritomo.</strong></span>
+            <a class="paper-title" href="file/draft_drought_humancapital_260110_EJ.pdf" target="_blank" rel="noopener">Does the timing of productivity shocks in childhood affect educational attainment?</a>
+            <span class="venue">New draft coming soon</span>
+
+            <div class="paper-links">
+              <details>
+                <summary>Abstract</summary>
+                <p>Poor households in developing countries often face trade-offs between children’s schooling and labor. Using data on pastoralist households in rural Kenya and Ethiopia–where livestock require care and generate within-household demand for child labor–I exploit quasi-random variation in rangeland grazing conditions that affects both household income and labor demand to estimate the impact of productivity shocks during childhood on educational attainment. Positive productivity shocks during preschool ages increase completed schooling, primarily by raising the probability of primary school entry, consistent with the relaxation of short-term liquidity constraints. In contrast, negative productivity shocks during primary school ages–when children are most likely to exit school and child labor productivity increases–are associated with higher educational attainment. This effect appears to operate through significant reductions in livestock holdings that lower subsequent demand for boys’ labor in animal husbandry and probably reinforce the effect by inducing sedentarization. These results highlight the importance of non-separable household production and human capital decisions in shaping educational outcomes during critical stages of childhood in low-income settings.</p>
+              </details>
+
+              <a href="file/presentation_drought_humancapital_260504_AMIE.pdf" target="_blank" rel="noopener">Slide</a>
+              <a href="https://www.rieb.kobe-u.ac.jp/en/edu-society/kanematsu_prize/index.html" target="_blank" rel="noopener">Kanematsu Award</a>
+              <a href="https://www.rieb.kobe-u.ac.jp/en/edu-society/kanematsu_prize/index.html" target="_blank" rel="noopener">Nishijima Award</a>
+              <span>George F. Warren Award</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="authors"><strong>Takasaki, Noritomo, Coomes, and Abizaid.</strong></span>
+            <span class="paper-title">Site selection causes bias in policy-oriented social science.</span>
+            <span class="venue">Submitted</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="publication" aria-labelledby="publication-heading">
+        <h2 id="publication-heading">Publication</h2>
+
+        <ul class="research-list">
+          <li>
+            <span class="authors"><strong>Hasebe, Noritomo, and Weeraratne (2026).</strong></span>
+            <a class="paper-title" href="file/WD_SriLanka_yn.pdf">Restricting mothers' international migration and human capital investment.</a>
+            <span class="venue">World Development</span>, Vol. 200, 107284. <span class="venue">Open Access</span>
+            <div class="paper-links">
+              <a href="https://www.ips.lk/talkingeconomics/2026/02/06/record-remittances-to-sri-lanka-hidden-realities-behind-the-headlines/" target="_blank" rel="noopener">Blog</a>
+              <a href="https://www.sophia.ac.jp/eng/article/news/release/260203_th/" target="_blank" rel="noopener">Press release</a>
+            </div>
+          </li>
+
+          <li>
+            <span class="authors"><strong>Jensen et al. (2025).</strong></span>
+            <a class="paper-title" href="https://www.sciencedirect.com/science/article/pii/S0306919225001149" target="_blank" rel="noopener">Index-based livestock insurance to support pastoralists against droughts.</a>
+            <span class="venue">Food Policy</span>, 137, 102909.
+          </li>
+
+          <li>
+            <span class="authors"><strong>Noritomo and Takahashi (2020).</strong></span>
+            <a class="paper-title" href="https://www.tandfonline.com/doi/full/10.1080/00220388.2020.1736281" target="_blank" rel="noopener">Can insurance payouts prevent a poverty trap? Evidence from randomised experiments in northern Kenya</a>,
+            <span class="venue">Journal of Development Studies</span>, 56(11), 2079-2096.
+            <div class="paper-links">
+              <a href="https://www.lightstone.co.jp/contest/contest2018_results.html" target="_blank" rel="noopener">Light Stone Awards</a>
+            </div>
+          </li>
+
+          <li>
+            <span class="authors"><strong>Takahashi, Noritomo, Ikegami, and Jensen (2020).</strong></span>
+            <a class="paper-title" href="https://www.sciencedirect.com/science/article/pii/S0306919220301147" target="_blank" rel="noopener">Understanding pastoralists' dynamic insurance uptake decisions: Evidence from four-year panel data in Ethiopia</a>,
+            <span class="venue">Food Policy</span>, 95, 101910.
+          </li>
+        </ul>
+      </section>
+
+      <p class="note">
+        📝 I have been contributing to <a href="https://x.com/dmeconsg" target="_blank" rel="noopener">Development Micro-econometrics Study Group</a> (Japanese), <a href="https://www.pnas.org/journal-club" target="_blank" rel="noopener">PNAS journal club</a>, <a href="https://business.cornell.edu/centers/cider/stars/" target="_blank" rel="noopener">STARS Peer Mentor</a>
       </p>
-    </details>
-    <a href="file/presentation_drought_humancapital_260504_AMIE.pdf" target="_blank">Slide</a>
-    <a href="https://www.rieb.kobe-u.ac.jp/en/edu-society/kanematsu_prize/index.html" target="_blank">Kanematsu Award</a>
-    <a href="https://www.rieb.kobe-u.ac.jp/en/edu-society/kanematsu_prize/index.html" target="_blank">Nishijima Award</a>
-    <span>George F. Warren Award</span>
-  </div>
-</li>
- <li class="spacer"> 
-    <strong>Takasaki, Noritomo, Coomes, and Abizaid.</strong> Site selection causes bias in policy-oriented social science. <i>Submitted</i>
-  </li>
-</ul>
-
-<h4 id="publication">Publication</h4>
-<ul>
-    <li class="spacer">
-    <strong>Hasebe, Noritomo, and Weeraratne (2026).</strong> <a href="file/WD_SriLanka_yn.pdf">Restricting mothers' international migration and human capital investment.</a> <i> World Development</i>, Vol. 200, 107284. <i> Open Access </i>
-   [<a href="https://www.ips.lk/talkingeconomics/2026/02/06/record-remittances-to-sri-lanka-hidden-realities-behind-the-headlines/">Blog</a>] [<a href="https://www.sophia.ac.jp/eng/article/news/release/260203_th/">Press release</a>]
-  </li>
-   <li class="spacer">
-    <strong>Jensen et al. (2025).</strong> <a href="https://www.sciencedirect.com/science/article/pii/S0306919225001149">Index-based livestock insurance to support pastoralists against droughts.</a> <i> Food Policy</i>, 137, 102909.
-  </li>
-  <li class="spacer">
-    <strong>Noritomo and Takahashi (2020).</strong> <a href="https://www.tandfonline.com/doi/full/10.1080/00220388.2020.1736281">Can insurance payouts prevent a poverty trap? Evidence from randomised experiments in northern Kenya</a>, <i>Journal of Development Studies</i>, 56(11), 2079-2096.
-   [<a href="https://www.lightstone.co.jp/contest/contest2018_results.html">Light Stone Awards</a>]
-  </li>
-  <li class="spacer">
-    <strong>Takahashi, Noritomo, Ikegami, and Jensen (2020).</strong> <a href="https://www.sciencedirect.com/science/article/pii/S0306919220301147">Understanding pastoralists' dynamic insurance uptake decisions: Evidence from four-year panel data in Ethiopia</a>, <i>Food Policy</i>, 95, 101910.
-  </li>
-</ul>
-
-   📝 I have been contributing to <a href="https://x.com/dmeconsg">Development Micro-econometrics Study Group</a> (Japanese), <a href="https://www.pnas.org/journal-club">PNAS journal club</a>, <a href="https://business.cornell.edu/centers/cider/stars/">STARS Peer Mentor</a> </p>
-  
-
-    <!-- <ul> -->
-      <!-- <li> -->
-        <!-- <strong>China's impact on regional employment: Propagation through input-output linkages and co-location patterns</strong><br/> -->
-        <!-- <a href="https://doi.org/10.1111/twec.13251" target="_blank">Link</a> -->
-        <!-- <details> -->
-          <!-- <summary>Abstract</summary> -->
-          <!-- <p>How do imports from China affect local labour markets in Japan? We examine this question using commuting zones as regional units and analysing shock propagation through supply chains and co-location patterns. Applying the method proposed by Autor et al. (American Economic Review, 103, 2121, 2013) and Acemoglu, Autor et al. (Journal of Labor Economics, 34, S141, 2016), we examine the impact of import shocks on regional manufacturing employment using input–output tables which allows us to investigate the propagation of shocks to both upstream and downstream industries and to relate the regional impact to industry co-location patterns. We find that the negative direct effect on local employment is underestimated in previous studies that do not consider the regional propagation of the shock through supply chains, especially the positive shock to downstream industries. Downstream industries in Japan, for example, significantly benefit from imports from China as they lower input prices and increase employment. In contrast to downstream industries, we find no significant impact on upstream industries. Our results imply that the direct negative effect on local labour markets is somewhat mitigated by effects on downstream industries within the same region.</p> -->
-        <!-- </details> -->
-      <!-- </li> -->
-    <!-- </ul> -->
-
-    <!-- <h2>CV</h2> -->
-    <!-- <p> -->
-      <!-- <a href="files/cv.pdf" target="_blank">Download my CV (PDF)</a> -->
-    </p>
+    </main>
   </div>
 </body>
 </html>
