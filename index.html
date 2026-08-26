@@ -34,8 +34,8 @@
       color: var(--ink);
       background: var(--paper);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 17px;
-      line-height: 1.58;
+      font-size: 15.5px;
+      line-height: 1.50;
     }
 
     a {
@@ -56,20 +56,20 @@
     .page {
       width: min(960px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 38px 0 52px;
+      padding: 26px 0 40px;
     }
 
     .site-header {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 34px;
+      grid-template-columns: 105px 1fr;
+      gap: 18px;
       align-items: start;
-      padding-bottom: 32px;
+      padding-bottom: 22px;
       border-bottom: 1px solid var(--line);
     }
 
     .portrait {
-      width: 200px;
+      width: 105px;
       aspect-ratio: 1;
       object-fit: cover;
       border-radius: 4px;
@@ -85,30 +85,32 @@
     }
 
     h1 {
-      margin: 0 0 7px;
-      font-size: clamp(2rem, 6vw, 3rem);
+      margin: 0 0 5px;
+      font-size: clamp(1.6rem, 4.4vw, 2.15rem);
     }
 
     h2 {
-      margin: 40px 0 16px;
-      padding-bottom: 7px;
+      margin: 30px 0 11px;
+      padding-bottom: 5px;
       border-bottom: 1px solid var(--line);
-      font-size: 1.38rem;
+      font-size: 1.23rem;
     }
 
     p {
-      margin: 0 0 13px;
+      margin: 0 0 9px;
     }
 
     .role {
-      margin: 0 0 12px;
+      margin: 0 0 8px;
       color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.45;
+      font-size: 1rem;
+      line-height: 1.38;
     }
 
     .intro {
       max-width: 700px;
+      font-size: 0.96rem;
+      line-height: 1.38;
     }
 
     .advisors,
@@ -121,7 +123,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px 18px;
-      margin-top: 15px;
+      margin-top: 10px;
       font-size: 0.98rem;
     }
 
@@ -136,7 +138,7 @@
     }
 
     .paper {
-      margin: 0 0 24px;
+      margin: 0 0 18px;
     }
 
     .paper-title {
@@ -145,7 +147,7 @@
     }
 
     .featured .paper-title {
-      font-size: 1.08rem;
+      font-size: 1.03rem;
     }
 
     .authors,
@@ -165,7 +167,7 @@
       flex-wrap: wrap;
       gap: 4px 16px;
       align-items: baseline;
-      margin-top: 6px;
+      margin-top: 4px;
       font-size: 0.95rem;
     }
 
@@ -206,12 +208,12 @@
 
     .abstract {
       max-width: 790px;
-      margin: 9px 0 3px;
+      margin: 7px 0 2px;
       padding-left: 13px;
       border-left: 3px solid var(--line);
       color: var(--ink);
       font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.45;
       white-space: normal;
     }
 
@@ -220,34 +222,34 @@
       margin: 5px 0 0;
       color: var(--muted);
       font-size: 0.96rem;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     footer {
-      margin-top: 42px;
-      padding-top: 18px;
+      margin-top: 32px;
+      padding-top: 14px;
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 0.9rem;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 520px) {
       .page {
         width: min(100% - 28px, 960px);
-        padding-top: 24px;
+        padding-top: 18px;
       }
 
       .site-header {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 16px;
       }
 
       .portrait {
-        width: min(210px, 68vw);
+        width: min(150px, 55vw);
       }
 
       h2 {
-        margin-top: 34px;
+        margin-top: 28px;
       }
 
       .paper-links {
@@ -274,35 +276,21 @@
         <h1>Yuma Noritomo</h1>
 
         <p class="role">
-          PhD student in Applied Economics and Management at Cornell University
-        </p>
-
-        <p class="intro">
-          My research is in <strong>development economics</strong> and
-          <strong>labor economics</strong>, with a focus on human capital.
-          I study how risk, productive assets, and labor demand shape schooling
-          and work decisions in low-income settings, and how policy can relax
-          these constraints.
+          PhD student at Cornell University
         </p>
 
         <p class="fields">
-          Fields: Development Economics; Labor Economics
+          <strong>Fields:</strong> Development Economics, Labor Economics
         </p>
 
-        <p class="advisors">
-          Advisors: Christopher B. Barrett, Brian Dillon, Johannes Haushofer,
-          and Karlijn Morsink
+        <p class="intro">
+          I study human capital, risk, and labor markets in low-income settings.
         </p>
 
         <div class="profile-links">
           <a href="mailto:yn266@cornell.edu">Email</a>
-          <a href="file/CV.pdf" target="_blank" rel="noopener">CV</a>
-
-          <!-- Uncomment when you want to post it:
-          <a href="file/ResearchStatement.pdf" target="_blank" rel="noopener">
-            Research Statement
-          </a>
-          -->
+          <a href="file/CV_YumaNoritomo_2026Aug.pdf" target="_blank" rel="noopener">CV</a>
+          <a href="file/ResearchStatement_YumaNoritomo_2026Aug.pdf" target="_blank" rel="noopener">Research Statement</a>
         </div>
       </div>
     </header>
@@ -312,16 +300,10 @@
         <h2 id="jmp-heading">Job Market Paper</h2>
 
         <article class="paper featured">
-          <!-- Upload the current JMP as file/JMP_Noritomo.pdf, then keep this link. -->
-          <a
-            class="paper-title"
-            href="file/JMP_Noritomo.pdf"
-            target="_blank"
-            rel="noopener"
-          >
+          <span class="paper-title">
             Trading Off Human Capital versus Productive Asset Investment:
             Perceptions of Risk and Return
-          </a>
+          </span>
 
           <div class="authors">
             with Karlijn Morsink and Kelvin Shikuku
@@ -426,16 +408,10 @@
 
 
           <li class="paper">
-            <!-- Replace this file with the current draft before publishing. -->
-            <a
-              class="paper-title"
-              href="file/ProductiveAssets_ChildLabor_Schooling.pdf"
-              target="_blank"
-              rel="noopener"
-            >
+            <span class="paper-title">
               Productive Assets, Child Labor, and Schooling:
               Evidence from Pastoralist Communities
-            </a>
+            </span>
 
             <div class="award-line">
               Kanematsu Award; Nishijima Award; George F. Warren Award
@@ -470,13 +446,13 @@
                 </p>
               </details>
 
-              <a
+              <!-- <a
                 href="file/presentation_drought_humancapital_260504_AMIE.pdf"
                 target="_blank"
                 rel="noopener"
               >
                 Slides
-              </a>
+              </a> -->
             </div>
           </li>
 
@@ -494,7 +470,7 @@
               Submitted
             </div>
 
-            <div class="paper-links">
+            <!-- <div class="paper-links">
               <details>
                 <summary>Abstract</summary>
                 <p class="abstract">
@@ -511,7 +487,7 @@
                   bias in policy-relevant research.
                 </p>
               </details>
-            </div>
+            </div> -->
           </li>
         </ul>
       </section>
