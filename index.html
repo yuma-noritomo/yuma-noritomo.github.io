@@ -150,6 +150,12 @@
       font-size: 1rem;
     }
 
+    .jmp-label {
+      color: var(--accent);
+      font-size: 0.88em;
+      white-space: nowrap;
+    }
+
     .authors,
     .paper-meta,
     .award-line {
@@ -217,6 +223,14 @@
       white-space: normal;
     }
 
+    .wip-description {
+      max-width: 780px;
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.45;
+    }
+
     footer {
       margin-top: 32px;
       padding-top: 14px;
@@ -281,62 +295,55 @@
 
         <div class="profile-links">
           <a href="mailto:yn266@cornell.edu">Email</a>
-          <a href="file/CV_YumaNoritomo_2026Aug.pdf" target="_blank" rel="noopener">CV</a>
-          <a href="file/ResearchStatement_YumaNoritomo_2026Aug.pdf" target="_blank" rel="noopener">
-            Research Statement
-          </a>
+          <a href="file/CV.pdf" target="_blank" rel="noopener">CV</a>
+          <a href="file/ResearchStatement.pdf" target="_blank" rel="noopener">Research Statement</a>
         </div>
       </div>
     </header>
 
     <main>
-
-      <section id="job-market-paper" aria-labelledby="jmp-heading">
-        <h2 id="jmp-heading">Job Market Paper</h2>
-
-        <article class="paper featured">
-          <span class="paper-title">
-            Trading Off Human Capital versus Productive Asset Investment:
-            Perceptions of Risk and Return
-          </span>
-
-          <div class="authors">
-            with Karlijn Morsink and Kelvin Shikuku
-          </div>
-
-          <div class="paper-links">
-            <details>
-              <summary>Abstract</summary>
-              <p class="abstract">
-                This paper studies a fundamental trade-off faced by low-income
-                households in developing countries: whether to invest in
-                productive assets to improve productivity and build resilience,
-                or to invest in human capital to enable entry into the skilled
-                labor market. We study quantitatively how perceptions of risk
-                and returns associated with climate change and structural
-                transformation affect investment decisions. We conduct two field
-                experiments with over 2,000 pastoralist parents in rural Kenya
-                and Ethiopia: a hypothetical choice experiment to estimate
-                parental preferences and subjective beliefs over their
-                children's future education, occupation, and livestock
-                production, and an information intervention that exogenously
-                shifts beliefs about these returns to examine how households
-                adjust actual investment decisions. Together, these analyses
-                allow us to test and quantify how risks associated with
-                productive assets shape human capital investment.
-              </p>
-            </details>
-
-            <span>PAP: AEARCTR-0017654</span>
-          </div>
-        </article>
-      </section>
-
-
       <section id="working-papers" aria-labelledby="working-papers-heading">
         <h2 id="working-papers-heading">Working Papers</h2>
 
         <ul class="research-list">
+          <li class="paper featured" id="job-market-paper">
+            <span class="paper-title">
+              Trading Off Human Capital versus Productive Asset Investment:
+              Perceptions of Risk and Return
+              <span class="jmp-label">(Job Market Paper)</span>
+            </span>
+
+            <div class="authors">
+              with Karlijn Morsink and Kelvin Shikuku
+            </div>
+
+            <div class="paper-links">
+              <details>
+                <summary>Abstract</summary>
+                <p class="abstract">
+                  This paper studies a fundamental trade-off faced by low-income
+                  households in developing countries: whether to invest in
+                  productive assets to improve productivity and build resilience,
+                  or to invest in human capital to enable entry into the skilled
+                  labor market. We study quantitatively how perceptions of risk
+                  and returns associated with climate change and structural
+                  transformation affect investment decisions. We conduct two field
+                  experiments with over 2,000 pastoralist parents in rural Kenya
+                  and Ethiopia: a hypothetical choice experiment to estimate
+                  parental preferences and subjective beliefs over their
+                  children's future education, occupation, and livestock
+                  production, and an information intervention that exogenously
+                  shifts beliefs about these returns to examine how households
+                  adjust actual investment decisions. Together, these analyses
+                  allow us to test and quantify how risks associated with
+                  productive assets shape human capital investment.
+                </p>
+              </details>
+
+              <span>PAP: AEARCTR-0017654</span>
+            </div>
+          </li>
+
 
           <li class="paper">
             <a
@@ -485,7 +492,6 @@
               </details>
             </div>
           </li>
-
         </ul>
       </section>
 
@@ -494,7 +500,6 @@
         <h2 id="publications-heading">Publications</h2>
 
         <ul class="research-list">
-
           <li class="paper">
             <span class="authors">
               Hasebe, <strong>Noritomo</strong>, and Weeraratne (2026).
@@ -519,7 +524,6 @@
               >
                 Blog
               </a>
-
               <a
                 href="https://www.sophia.ac.jp/eng/article/news/release/260203_th/"
                 target="_blank"
@@ -536,7 +540,6 @@
               Jensen, Barrett, Mude, Banerjee, <strong>Noritomo</strong>,
               Shikuku, Takahashi, and Teufel (2025).
             </span>
-
             <a
               class="paper-title"
               href="https://www.sciencedirect.com/science/article/pii/S0306919225001149"
@@ -545,7 +548,6 @@
             >
               Index-Based Livestock Insurance to Support Pastoralists against Droughts.
             </a>
-
             <span class="paper-meta">
               <em>Food Policy</em>, 137, 102909.
             </span>
@@ -556,7 +558,6 @@
             <span class="authors">
               <strong>Noritomo</strong> and Takahashi (2020).
             </span>
-
             <a
               class="paper-title"
               href="https://www.tandfonline.com/doi/full/10.1080/00220388.2020.1736281"
@@ -566,7 +567,6 @@
               Can Insurance Payouts Prevent a Poverty Trap?
               Evidence from Randomised Experiments in Northern Kenya.
             </a>
-
             <span class="paper-meta">
               <em>Journal of Development Studies</em>, 56(11), 2079–2096.
             </span>
@@ -577,7 +577,6 @@
             <span class="authors">
               Takahashi, <strong>Noritomo</strong>, Ikegami, and Jensen (2020).
             </span>
-
             <a
               class="paper-title"
               href="https://www.sciencedirect.com/science/article/pii/S0306919220301147"
@@ -587,12 +586,10 @@
               Understanding Pastoralists' Dynamic Insurance Uptake Decisions:
               Evidence from Four-Year Panel Data in Ethiopia.
             </a>
-
             <span class="paper-meta">
               <em>Food Policy</em>, 95, 101910.
             </span>
           </li>
-
         </ul>
       </section>
 
@@ -601,18 +598,15 @@
         <h2 id="wip-heading">Work in Progress</h2>
 
         <ul class="research-list">
-
           <li class="paper">
             <span class="paper-title">
               Droughts, Cattle Raiding, and Child Marriage:
               Evidence from Pastoralist Communities
             </span>
-
             <div class="authors">
               with Anouk van Veldhoven, Karlijn Morsink, Hyuk Harry Son,
               and Watson Lepariyo
             </div>
-
             <div class="paper-links">
               <details>
                 <summary>Abstract</summary>
@@ -630,13 +624,12 @@
 
           <li class="paper">
             <span class="paper-title">
-              Banning Hazardous Child Labor: Substitution into Safer Work and Schooling
+              Hazardous Child Labor Ban:
+              Substitution to Non-Hazardous Work and Education
             </span>
-
             <div class="authors">
               with Kotaro Fujisaki
             </div>
-
             <div class="paper-links">
               <details>
                 <summary>Abstract</summary>
@@ -654,12 +647,10 @@
             <span class="paper-title">
               Reducing Conflict Incentives through Insurance and Paid Apprenticeships
             </span>
-
             <div class="authors">
               with Marcos Sugastti, Karlijn Morsink, Nathan Jensen,
               and Kelvin Shikuku
             </div>
-
             <div class="paper-links">
               <details>
                 <summary>Abstract</summary>
@@ -673,16 +664,13 @@
               </details>
             </div>
           </li>
-
         </ul>
       </section>
-
     </main>
 
     <footer>
       Last updated August 2026
     </footer>
-
   </div>
 </body>
 </html>
